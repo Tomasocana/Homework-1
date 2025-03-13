@@ -40,6 +40,7 @@ int main(){
 }
 
 // (b)
+/// (i)
 void logMessage(string Mensaje_de_Error, string archivo, int Línea_de_Código){
     ofstream file ("log.txt");
     if (file.is_open()){
@@ -49,15 +50,17 @@ void logMessage(string Mensaje_de_Error, string archivo, int Línea_de_Código){
     else cout << "No se pudo abrir el archivo";
 }
 
+/// (ii)
 void logMessage(string Mensaje_De_Acceso, string Nombre_de_Usuario){
     ofstream file ("log.txt");
     if (file.is_open()){
-        file << "[SCURITY] " << Nombre_de_Usuario << ": " << Mensaje_De_Acceso << ".\n Proceed.";
+        file << "[SECURITY] " << Nombre_de_Usuario << ": " << Mensaje_De_Acceso << ".\n Proceed.";
         file.close();
     }
     else cout << "No se pudo abrir el archivo";
 }
 
+/// (iii)
 int main(){
     
 }
