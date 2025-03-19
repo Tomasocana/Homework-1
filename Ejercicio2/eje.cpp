@@ -5,7 +5,7 @@ using namespace std;;
 // (a)
 
 void logMessage(string mensaje, const char* NivelSeveridad) {
-    ofstream file ("log_error.txt", ios::app);
+    ofstream file ("log_error.txt", ios::app); //Inicializo el archivo con ios::app para leer, escribir y crear en caso de que el archivo no exista.
     if (file.is_open()){
         file << NivelSeveridad << ": " << mensaje << "\n";
         file.close();
@@ -17,7 +17,7 @@ void logMessage(string mensaje, const char* NivelSeveridad) {
 // y las coloca todas dentro del mismo log.
 int main(){
     const char* errores[] = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"};
-    for (auto i : errores){
+    for (auto i : errores){ //Itero sobre la lista para probar todas las entradas posibles.
         logMessage("Mensaje de prueba", i);
     }
     return 0;
@@ -50,7 +50,7 @@ int main(){
     cout << "Que desea realizar?\n1. Log de error\n2. Log de error con archivo y línea de código\n3. Log de acceso\n";
     int opcion;
     cin >> opcion;
-    switch (opcion){
+    switch (opcion){ //Switch para trabajar con la opción elegida.
         case 1:{
             string mensaje;
             cout << "Mensaje de error: ";
@@ -78,12 +78,13 @@ int main(){
 
     // Codigo que muestra que puede capturar un error en runtime, crear una entrada en el log
     // detener la ejecución del programa y salir del mismo con código de error.
+    // Esta comentado para que no se ejecute en el main.
 
-    try {
-        throw runtime_error("Error en tiempo de ejecución");
-    }
-    catch (runtime_error &e){
-        logMessage("Error en tiempo de ejecución", (const char*) "ERROR");	
-        exit(1);
-    }
+    //try {
+    //    throw runtime_error("Error en tiempo de ejecución");
+    //}
+    //catch (runtime_error &e){
+    //    logMessage("Error en tiempo de ejecución", (const char*) "ERROR");	
+    //    exit(1);
+    //}
 }

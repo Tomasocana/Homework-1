@@ -5,9 +5,9 @@ using namespace std;
 
 // (a)
 bool sonIguales(string a, string b) {
-    static int i = 0;
-    if (a[i] != b[i]) return false;
-    if (i == (int)a.size()) return true;
+    static int i = 0; //Defino un static int para ir comparando caracter por caracter de forma recursiva
+    if (a[i] != b[i]) return false; //False cuando un caracter es distinto
+    if (i == (int)a.size()) return true; //True cuando se recorrieron todos los caracteres y no se encontraron discrepancias.
     i++;
     return sonIguales(a, b);
 }
@@ -30,7 +30,7 @@ int main() {
 
 // (c)
 
-constexpr bool sonIguales(const char* a, const char* b, int i = 0) {
+constexpr bool sonIguales(const char* a, const char* b, int i = 0) { //Cambio la firma de la función porque no se pueden utilizar variables estaticas en tiempo de compilación.
     if (a[i] != b[i]) return false;
     if (i == (int)strlen(a)) return true;
     return sonIguales(a, b, i + 1);
