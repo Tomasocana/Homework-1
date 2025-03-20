@@ -87,7 +87,7 @@ void erase(shared_ptr<lista_enlazada> list, int pos){
 }
 
 //iv
-void print_list(const shared_ptr<lista_enlazada>& list){
+void print_list(const shared_ptr<lista_enlazada>& list){ //Hago que la lista sea constante para asegurar de que no se modifique en ningun momento
     if (list->head == nullptr) cout << "La lista está vacía." << endl; //Si la lista está vacía, se imprime un mensaje.
     else {
         shared_ptr<node_t> curr = list->head;

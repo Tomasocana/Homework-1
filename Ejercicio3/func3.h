@@ -25,5 +25,5 @@ void insert(shared_ptr<lista_enlazada> list, shared_ptr<node_t> node, int pos);
 
 void erase(shared_ptr<lista_enlazada> list, int pos);
 
-void print_list(shared_ptr<lista_enlazada> list);
+void print_list(const shared_ptr<lista_enlazada>& list);
 
