@@ -1,5 +1,3 @@
-#include <iostream>
-#include <memory>
 #include "func3.h"
 using namespace std;
 
